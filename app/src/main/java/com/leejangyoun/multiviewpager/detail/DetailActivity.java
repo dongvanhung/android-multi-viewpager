@@ -85,7 +85,7 @@ public class DetailActivity extends AppCompatActivity {
                         return;
 
                     //if sending all card, must get more card by http protocol
-                    String url = "http://leejangyoun.com/android/dummy/SlideCardView_" + (++mPage) + ".json";
+                    String url = "http://leejangyoun.com/android/dummy/MultiViewPagerArr_" + (++mPage) + ".json";
 
                     StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new CustomSuccessListener(), new CustomErrorListener());
                     mQueue.add(stringRequest);
@@ -107,7 +107,7 @@ public class DetailActivity extends AppCompatActivity {
 
         //set http queue
         mQueue = Volley.newRequestQueue(mContext);
-        String url = "http://leejangyoun.com/android/dummy/SlideCardView_1.json";
+        String url = "http://leejangyoun.com/android/dummy/MultiViewPagerArr_1.json";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new CustomSuccessListener(), new CustomErrorListener());
         mQueue.add(stringRequest);
 
