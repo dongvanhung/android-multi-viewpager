@@ -1,6 +1,7 @@
 # android-multi-viewpager
 
-<img src="https://github.com/jangyoun/android-swipable-cardview/raw/master/preview.gif" width="250">
+<img src="https://github.com/jangyoun/android-multi-viewpager/raw/master/preview1.gif" width="250">
+<img src="https://github.com/jangyoun/android-multi-viewpager/raw/master/preview2.gif" width="250">
 
 ##Description
  - Using [AndroidSwipeableCardStack Lib] (https://github.com/wenchaojiang/AndroidSwipeableCardStack)
