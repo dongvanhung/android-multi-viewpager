@@ -155,7 +155,7 @@ public class DetailActivity extends AppCompatActivity {
             mAdapter.notifyDataSetChanged();
 
             // move selected card.
-            if (mPage == 1) {
+            if (mPage == 1 && mIntentNo != -1) {
                 for (Fruit f : mArr) {
                     if(f.getNo() == mIntentNo) {
                         new ChangePosition().execute(mArr.indexOf(f));
