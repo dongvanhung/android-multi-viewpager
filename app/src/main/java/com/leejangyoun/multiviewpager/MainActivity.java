@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         pager.setAdapter(mFruitAdapter);
         mFruitAdapter.setListener(new FruitPagerAdapter.FruitPagerAdapterListener() {
             @Override
-            public void onClick(int no) {
-                hideAndGotoAnswerActivity(no);
+            public void onClick(int fruitNo) {
+                hideAndGotoAnswerActivity(fruitNo);
             }
         });
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     // =======================================================================
     // METHOD : hideAndGotoAnswerActivity
     // =======================================================================
-    private void hideAndGotoAnswerActivity(final int no) {
+    private void hideAndGotoAnswerActivity(final int fruitNo) {
 
         if (mIsShowingBottomView)
             return;
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onBlurComplete() {
                         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-                        intent.putExtra(DetailActivity.INTENT_NO, no);
+                        intent.putExtra(DetailActivity.INTENT_NO, fruitNo);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intent);
                     }
