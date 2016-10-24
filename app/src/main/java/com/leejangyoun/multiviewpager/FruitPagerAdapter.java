@@ -41,19 +41,24 @@ public class FruitPagerAdapter extends PagerAdapter {
             Glide.with(mContext).load(mArr.get(position).getThumb()).into((ImageView) view.findViewById(R.id.img_profile));
             ((TextView) view.findViewById(R.id.txt_name)).setText(mArr.get(position).getTitle());
             ((TextView) view.findViewById(R.id.txt_content)).setText(mArr.get(position).getDesc());
-
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener != null) listener.onClick(fruit.getNo());
+                }
+            });
+            
         } else if (fruit.getType() == Fruit.TYPE.MORE) {
             view.findViewById(R.id.moreView).setVisibility(View.VISIBLE);
             view.findViewById(R.id.cellView).setVisibility(View.GONE);
-
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener != null) listener.onClick(-1);
+                }
+            });
         }
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(listener != null) listener.onClick(fruit.getNo());
-            }
-        });
 
         container.addView(view);
         return view;
@@ -91,6 +96,6 @@ public class FruitPagerAdapter extends PagerAdapter {
         this.listener = listener;
     }
     public interface FruitPagerAdapterListener {
-        void onClick(int no);
+        void onClick(int fruitNo);
     }
 }
